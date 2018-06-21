@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "High Castle", "High Castle.csproj", "{1E99D632-57F2-898A-912E-C84853D6DEC2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "High Castle.Editor", "High Castle.Editor.csproj", "{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "High Castle.Editor", "High Castle.Editor.csproj", "{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}"
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1E99D632-57F2-898A-912E-C84853D6DEC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E99D632-57F2-898A-912E-C84853D6DEC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E99D632-57F2-898A-912E-C84853D6DEC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E99D632-57F2-898A-912E-C84853D6DEC2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}.Release|Any CPU.ActiveCfg = Release|Any CPU

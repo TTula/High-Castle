@@ -341,12 +341,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="High Castle.csproj">
-      <Project>{1E99D632-57F2-898A-912E-C84853D6DEC2}</Project>
-      <Name>High Castle</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="C:\Users\YOSSARIAN\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.standardevents@1.0.13\Editor\Importer.cs" />
   </ItemGroup>
   <ItemGroup>
