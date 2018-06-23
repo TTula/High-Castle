@@ -208,10 +208,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0a3f98662bb29499e7bffd40a33a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeedLR: 20
-  cameraSpeedUD: 20
-  cameraRotSpeed: 1
-  borderCameraScroll: 0.05
+  cameraSpeedLR: 30
+  cameraSpeedUD: 30
+  cameraRotSpeed: 0.4
+  cameraZoomSpeed: 1
+  borderCameraScroll: 0.1
 --- !u!65 &239081817
 BoxCollider:
   m_ObjectHideFlags: 0
