@@ -6,12 +6,22 @@ public class CameraControler : MonoBehaviour {
 
     public float cameraSpeedLR;
     public float cameraSpeedUD;
+    public float cameraRotSpeed;
     [Tooltip("How far from screen border cursor must be to scroll the camera.")]
+    [Range(0f,1f)]
     public float borderCameraScroll;
 
-    private bool hasCameraChangedRotation = true;
+    private bool hasCameraChangedRotation = false;
     private Vector3 directionOfCameraScrollingUD;
     private Vector3 directionOfCameraScrollingLR;
+
+    private float firstPositionOfMouseCameraRotation;
+    private float firstRotationOfCamera;
+
+    private void Start()
+    {
+        ChangeDirectionOfCameraScrolling();
+    }
 
     private void Update()
     {
@@ -32,20 +42,29 @@ public class CameraControler : MonoBehaviour {
             gameObject.transform.position -= directionOfCameraScrollingUD * Time.deltaTime * cameraSpeedUD;
         }
 
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            firstPositionOfMouseCameraRotation = Input.mousePosition.x;
+            firstRotationOfCamera = transform.rotation.eulerAngles.y;
+            hasCameraChangedRotation = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            hasCameraChangedRotation = false;
+        }
+
         if (hasCameraChangedRotation)
         {
+            transform.rotation = Quaternion.Euler(45f, firstRotationOfCamera + (Input.mousePosition.x - firstPositionOfMouseCameraRotation) * cameraRotSpeed, 0f);
             ChangeDirectionOfCameraScrolling();
-            hasCameraChangedRotation = false;
-            print(directionOfCameraScrollingLR);
-            print(directionOfCameraScrollingUD);
         }
     }
 
     private void ChangeDirectionOfCameraScrolling()
     {
         float arc = transform.rotation.eulerAngles.y * Mathf.PI / 180f;
-        print(arc);
-        directionOfCameraScrollingUD = new Vector3(-Mathf.Sin(arc), 0f, -Mathf.Cos(arc));
-        directionOfCameraScrollingLR = new Vector3(-Mathf.Cos(arc), 0f, Mathf.Sin(arc));
+        directionOfCameraScrollingUD = new Vector3(Mathf.Sin(arc), 0f, Mathf.Cos(arc));
+        directionOfCameraScrollingLR = new Vector3(Mathf.Cos(arc), 0f, -Mathf.Sin(arc));
     }
 }
