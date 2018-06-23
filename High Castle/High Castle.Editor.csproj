@@ -345,6 +345,10 @@
       <Project>{03C76D7E-F201-7C0B-FCAC-6BA1636E0033}</Project>
       <Name>High Castle.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="High Castle.csproj">
+      <Project>{1E99D632-57F2-898A-912E-C84853D6DEC2}</Project>
+      <Name>High Castle</Name>
+    </ProjectReference>
     <ProjectReference Include="High Castle.Editor.Plugins.csproj">
       <Project>{66FE6857-574D-DF9A-0E84-BB1A275F7A4C}</Project>
       <Name>High Castle.Editor.Plugins</Name>
