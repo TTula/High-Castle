@@ -18,15 +18,20 @@ public class CameraControler : MonoBehaviour {
 
     private float firstPositionOfMouseCameraRotation;
     private float firstRotationOfCamera;
+    private Terrain terrain;
 
     private void Start()
     {
         ChangeDirectionOfCameraScrolling();
+        terrain = FindObjectOfType<Terrain>();
     }
 
     private void Update()
     {
         CameraScroll();
+
+        transform.position = new Vector3(transform.position.x, terrain.SampleHeight(transform.position), transform.position.z);
+        print(terrain.SampleHeight(transform.position));
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {

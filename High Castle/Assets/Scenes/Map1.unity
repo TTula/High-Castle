@@ -211,7 +211,7 @@ MonoBehaviour:
   cameraSpeedLR: 30
   cameraSpeedUD: 30
   cameraRotSpeed: 0.4
-  cameraZoomSpeed: 1
+  cameraZoomSpeed: 0.1
   borderCameraScroll: 0.1
 --- !u!65 &239081817
 BoxCollider:
