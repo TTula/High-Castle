@@ -71,48 +71,49 @@ public class CameraControler : MonoBehaviour {
 
     private void CameraScroll ()
     {
+        float cameraHeightModifier = cameraInChildren.transform.localPosition.y;
         if (Input.mousePosition.x < borderCameraScroll * Screen.width)
         {
             if (Input.mousePosition.x < 0.5f * borderCameraScroll * Screen.width)
             {
-                gameObject.transform.position += 2f * directionOfCameraScrollingLR * Time.deltaTime * cameraSpeedLR;
+                gameObject.transform.position += 2f * directionOfCameraScrollingLR * Time.deltaTime * cameraSpeedLR * cameraHeightModifier;
             }
             else
             {
-                gameObject.transform.position += directionOfCameraScrollingLR * Time.deltaTime * cameraSpeedLR;
+                gameObject.transform.position += directionOfCameraScrollingLR * Time.deltaTime * cameraSpeedLR * cameraHeightModifier;
             }
         }
         if (Input.mousePosition.x > (1f - borderCameraScroll) * Screen.width)
         {
             if (Input.mousePosition.x > (1f - borderCameraScroll * 0.5f) * Screen.width)
             {
-                gameObject.transform.position -= 2f * directionOfCameraScrollingLR * Time.deltaTime * cameraSpeedLR;
+                gameObject.transform.position -= 2f * directionOfCameraScrollingLR * Time.deltaTime * cameraSpeedLR * cameraHeightModifier;
             }
             else
             {
-                gameObject.transform.position -= directionOfCameraScrollingLR * Time.deltaTime * cameraSpeedLR;
+                gameObject.transform.position -= directionOfCameraScrollingLR * Time.deltaTime * cameraSpeedLR * cameraHeightModifier;
             }
         }
         if (Input.mousePosition.y < borderCameraScroll * Screen.height)
         {
             if (Input.mousePosition.y < 0.5f * borderCameraScroll * Screen.height)
             {
-                gameObject.transform.position += 2f * directionOfCameraScrollingUD * Time.deltaTime * cameraSpeedUD;
+                gameObject.transform.position += 2f * directionOfCameraScrollingUD * Time.deltaTime * cameraSpeedUD * cameraHeightModifier;
             }
             else
             {
-                gameObject.transform.position += directionOfCameraScrollingUD * Time.deltaTime * cameraSpeedUD;
+                gameObject.transform.position += directionOfCameraScrollingUD * Time.deltaTime * cameraSpeedUD * cameraHeightModifier;
             }
         }
         if (Input.mousePosition.y > (1f - borderCameraScroll) * Screen.height)
         {
             if (Input.mousePosition.y > (1f - borderCameraScroll * 0.5f) * Screen.height)
             {
-                gameObject.transform.position -= 2f * directionOfCameraScrollingUD * Time.deltaTime * cameraSpeedUD;
+                gameObject.transform.position -= 2f * directionOfCameraScrollingUD * Time.deltaTime * cameraSpeedUD * cameraHeightModifier;
             }
             else
             {
-                gameObject.transform.position -= directionOfCameraScrollingUD * Time.deltaTime * cameraSpeedUD;
+                gameObject.transform.position -= directionOfCameraScrollingUD * Time.deltaTime * cameraSpeedUD * cameraHeightModifier;
             }
 
         }
