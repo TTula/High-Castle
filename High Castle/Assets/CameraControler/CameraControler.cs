@@ -11,6 +11,13 @@ public class CameraControler : MonoBehaviour {
     [Tooltip("How far from screen border cursor must be to scroll the camera.")]
     [Range(0f,1f)]
     public float borderCameraScroll;
+    public float xMin;
+    public float xMax;
+    public float zMin;
+    public float zMax;
+    public float zoomMin;
+    public float zoomMax;
+    public float posOfCameraUD;
 
     private bool hasCameraChangedRotation = false;
     private Vector3 directionOfCameraScrollingUD;
@@ -20,18 +27,19 @@ public class CameraControler : MonoBehaviour {
     private float firstRotationOfCamera;
     private Terrain terrain;
 
+    private Camera cameraInChildren;
+
     private void Start()
     {
         ChangeDirectionOfCameraScrolling();
         terrain = FindObjectOfType<Terrain>();
+        cameraInChildren = GetComponentInChildren<Camera>();
     }
 
     private void Update()
     {
         CameraScroll();
-
-        transform.position = new Vector3(transform.position.x, terrain.SampleHeight(transform.position), transform.position.z);
-        print(terrain.SampleHeight(transform.position));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin, xMax), terrain.SampleHeight(transform.position), Mathf.Clamp(transform.position.z, zMin, zMax));
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
@@ -112,6 +120,7 @@ public class CameraControler : MonoBehaviour {
 
     private void CameraZoom()
     {
-        GetComponentInChildren<Camera>().transform.localPosition += new Vector3(0f, - cameraZoomSpeed * Input.GetAxis("Mouse ScrollWheel")); 
+        cameraInChildren.transform.localPosition += new Vector3(0f, - cameraZoomSpeed * Input.GetAxis("Mouse ScrollWheel"));
+        cameraInChildren.transform.localPosition = new Vector3(0f, Mathf.Clamp(cameraInChildren.transform.localPosition.y, zoomMin, zoomMax), -posOfCameraUD);
     }
 }
