@@ -304,6 +304,8 @@
   <ItemGroup>
     <Compile Include="Assets\CameraControler\CameraControler.cs" />
     <Compile Include="Assets\Knight\scripts\rotator.cs" />
+    <Compile Include="Assets\Unit\LightLight.cs" />
+    <Compile Include="Assets\Unit\Soldier.cs" />
     <Compile Include="Assets\Unit\Unit.cs" />
   </ItemGroup>
   <ItemGroup>
