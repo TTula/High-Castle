@@ -30,5 +30,12 @@ public class Unit : MonoBehaviour {
                 soldier.GetComponentInChildren<LightLight>().TurnOff();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            
+        }
+
     }
+
 }
