@@ -49,7 +49,7 @@ public class FortressButton : MonoBehaviour {
     private void ForgeCreationButtonClicked()
     {
         print("Forge button pressed!");
-
+        myFortress.OnBuildingForge();
     }
 
     private void BarracksCreationButtonClicked()
