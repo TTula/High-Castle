@@ -5,11 +5,14 @@ using UnityEngine;
 public class Unit : MonoBehaviour {
 
     private Soldier[] soldiers;
+    private CameraControler cameraControler;
 
     public bool isActivated = false;
+    public float activationDistanceTreshold;
 
     private void Start()
     {
+        cameraControler = FindObjectOfType<CameraControler>();
         soldiers = GetComponentsInChildren<Soldier>();
         isActivated = false;
     }
@@ -33,7 +36,16 @@ public class Unit : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            
+            float distanceToGround = cameraControler.DistanceToGround(Input.mousePosition.y);
+            Vector3 mouseClickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0f, 0f, distanceToGround));
+            float distanceToUnit = (mouseClickedPosition - transform.position).magnitude;
+            if (distanceToUnit < activationDistanceTreshold) 
+            {
+                isActivated = true;
+            } else
+            {
+                isActivated = false;
+            }
         }
 
     }

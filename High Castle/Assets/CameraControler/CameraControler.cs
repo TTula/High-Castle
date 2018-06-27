@@ -39,7 +39,7 @@ public class CameraControler : MonoBehaviour {
     private void Update()
     {
         CameraScroll();
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin, xMax), terrain.SampleHeight(transform.position), Mathf.Clamp(transform.position.z, zMin, zMax));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin, xMax), 50f + terrain.SampleHeight(transform.position), Mathf.Clamp(transform.position.z, zMin, zMax));
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
@@ -124,4 +124,12 @@ public class CameraControler : MonoBehaviour {
         cameraInChildren.transform.localPosition += new Vector3(0f, - cameraZoomSpeed * Input.GetAxis("Mouse ScrollWheel"));
         cameraInChildren.transform.localPosition = new Vector3(0f, Mathf.Clamp(cameraInChildren.transform.localPosition.y, zoomMin, zoomMax), -posOfCameraUD);
     }
+
+    public float DistanceToGround (float yMousePosition)
+    {
+        float currentZoom = cameraInChildren.transform.localPosition.y;
+        float arcRad = 50f * yMousePosition * Mathf.PI / (Screen.height * 180f);
+        return 200f * currentZoom / Mathf.Cos(Mathf.PI / 9f + arcRad);
+    }
+
 }
