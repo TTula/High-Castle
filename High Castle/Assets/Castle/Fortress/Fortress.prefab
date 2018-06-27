@@ -198,6 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4087838760192882}
   - component: {fileID: 114606313815666858}
+  - component: {fileID: 114892351344057014}
   m_Layer: 0
   m_Name: Fortress
   m_TagString: Untagged
@@ -1245,6 +1246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
+  activationDistanceTreshold: 25
 --- !u!114 &114782072535663442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1256,6 +1258,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97651003f71f894488e718fce36961b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114892351344057014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528027079406000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c6b16280ce94c42834c44a0783fb60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFortressControlledByPlayer: 1
+  fortressButton: {fileID: 1205802648202204, guid: 1c418148968ba804797b6f61f892c7c5,
+    type: 2}
 --- !u!136 &136018169766182776
 CapsuleCollider:
   m_ObjectHideFlags: 1

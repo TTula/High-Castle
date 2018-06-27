@@ -302,8 +302,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Barracks.cs" />
+    <Compile Include="Assets\BarracksButton.cs" />
     <Compile Include="Assets\Buildings.cs" />
     <Compile Include="Assets\CameraControler\CameraControler.cs" />
+    <Compile Include="Assets\Forge.cs" />
+    <Compile Include="Assets\ForgeButton.cs" />
     <Compile Include="Assets\Fortress.cs" />
     <Compile Include="Assets\FortressButton.cs" />
     <Compile Include="Assets\Knight\scripts\rotator.cs" />

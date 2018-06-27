@@ -180,6 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4012150813399104}
   - component: {fileID: 114833852219794726}
+  - component: {fileID: 114275655283920114}
   m_Layer: 0
   m_Name: Barracks
   m_TagString: Untagged
@@ -848,6 +849,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114275655283920114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804925681668678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ccc4d044dfc3843ad83192ae4bc797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBarracksControlledByPlayer: 0
+  barracksButton: {fileID: 1814831020775786, guid: 7bb641a0a237d534f875a6391e88d601,
+    type: 2}
 --- !u!114 &114833852219794726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -860,6 +875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
+  activationDistanceTreshold: 20
 --- !u!114 &114969504299787284
 MonoBehaviour:
   m_ObjectHideFlags: 1

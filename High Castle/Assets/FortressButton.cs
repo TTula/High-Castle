@@ -38,5 +38,10 @@ public class FortressButton : MonoBehaviour {
         }
     }
 
+    public void DestroyButton()
+    {
+        Destroy(gameObject);
+    }
+
 
 }

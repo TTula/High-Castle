@@ -126,6 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4700629553504280}
   - component: {fileID: 114292424631708620}
+  - component: {fileID: 114154667561689038}
   m_Layer: 0
   m_Name: Forge
   m_TagString: Untagged
@@ -504,6 +505,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114154667561689038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817440418025638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f71faefffd45b74cb7bc2f88513a2e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isForgeControlledByPlayer: 0
+  forgeButton: {fileID: 1257119644352268, guid: a5c04b316819a68459235d3f1e52d1ed,
+    type: 2}
 --- !u!114 &114292424631708620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -516,6 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
+  activationDistanceTreshold: 13
 --- !u!114 &114472450376748120
 MonoBehaviour:
   m_ObjectHideFlags: 1
