@@ -16,12 +16,12 @@ public class LightLight : MonoBehaviour {
 
     public void TurnOff()
     {
-        lightChild.enabled = false;
-        meshRenderer.enabled = false;
+        if (lightChild) { lightChild.enabled = false; }
+        if (meshRenderer) { meshRenderer.enabled = false; }
     }
     public void TurnOn()
     {
-        lightChild.enabled = true;
-        meshRenderer.enabled = true;
+        if (lightChild) { lightChild.enabled = true; }
+        if (meshRenderer) { meshRenderer.enabled = true; }
     }
 }

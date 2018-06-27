@@ -302,6 +302,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Buildings.cs" />
     <Compile Include="Assets\CameraControler\CameraControler.cs" />
     <Compile Include="Assets\Knight\scripts\rotator.cs" />
     <Compile Include="Assets\Unit\LightLight.cs" />
