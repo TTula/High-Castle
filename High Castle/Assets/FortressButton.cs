@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FortressButton : MonoBehaviour {
 
@@ -18,6 +19,8 @@ public class FortressButton : MonoBehaviour {
                 myFortress = fortress;
             }
         }
+        panelChild.GetChild(0).GetComponent<Button>().onClick.AddListener(ForgeCreationButtonClicked);
+        panelChild.GetChild(1).GetComponent<Button>().onClick.AddListener(BarracksCreationButtonClicked);
     }
 
     private void Update()
@@ -43,5 +46,15 @@ public class FortressButton : MonoBehaviour {
         Destroy(gameObject);
     }
 
+    private void ForgeCreationButtonClicked()
+    {
+        print("Forge button pressed!");
+
+    }
+
+    private void BarracksCreationButtonClicked()
+    {
+        print("Barracks button pressed!");
+    }
 
 }
