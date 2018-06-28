@@ -8,6 +8,8 @@ public class Fortress : MonoBehaviour {
     public GameObject fortressButton;
     public float buildingRotationSpeed;
 
+    public static bool buildMode = false; 
+
     public GameObject forgeBuilding;
     public GameObject barracksBuilding;
     private GameObject fBuilding;
@@ -21,6 +23,7 @@ public class Fortress : MonoBehaviour {
 
     private void Start()
     {
+        GetComponent<Buildings>().Building();
         isFortressControlledByPlayer = true;
         fButton = Instantiate(fortressButton);
         fButton.transform.parent = FindObjectOfType<Canvas>().transform;
@@ -63,6 +66,7 @@ public class Fortress : MonoBehaviour {
 
     private void WhileBuildingForge()
     {
+        buildMode = true;
         cameraControler.isCameraZoomEnabled = false;
         float distanceToGround = cameraControler.DistanceToGround(Input.mousePosition.y);
         Vector3 mouseOnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0f, 0f, distanceToGround));
@@ -107,11 +111,14 @@ public class Fortress : MonoBehaviour {
             }
             isForgeBuilded = false;
             cameraControler.isCameraZoomEnabled = true;
+            buildMode = false;
+            fBuilding.GetComponent<Buildings>().Building();
         }
     }
 
     private void WhileBuildingBarracks()
     {
+        buildMode = true;
         cameraControler.isCameraZoomEnabled = false;
         float distanceToGround = cameraControler.DistanceToGround(Input.mousePosition.y);
         Vector3 mouseOnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0f, 0f, distanceToGround));
@@ -155,6 +162,8 @@ public class Fortress : MonoBehaviour {
             }
             isBarracksBuilded = false;
             cameraControler.isCameraZoomEnabled = true;
+            buildMode = false;
+            bBuilding.GetComponent<Buildings>().Building();
         }
     }
 }

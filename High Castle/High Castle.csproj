@@ -310,6 +310,7 @@
     <Compile Include="Assets\ForgeButton.cs" />
     <Compile Include="Assets\Fortress.cs" />
     <Compile Include="Assets\FortressButton.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Ground.cs" />
     <Compile Include="Assets\Knight\scripts\rotator.cs" />
     <Compile Include="Assets\Unit\LightLight.cs" />

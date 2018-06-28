@@ -6,8 +6,10 @@ public class Buildings : MonoBehaviour {
 
     public bool isActivated;
     public float activationDistanceTreshold;
+    public float timeToBuild;
 
     private CameraControler cameraControler;
+    private bool onBuild = true;
 
     private void Start()
     {
@@ -25,7 +27,7 @@ public class Buildings : MonoBehaviour {
             GetComponentInChildren<LightLight>().TurnOff();
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !Fortress.buildMode && !onBuild)
         {
             Activation();
         }
@@ -44,5 +46,15 @@ public class Buildings : MonoBehaviour {
         {
             isActivated = false;
         }
+    }
+
+    public void Building ()
+    {
+        Invoke("WhenBuilded", timeToBuild); 
+    }
+
+    private void WhenBuilded()
+    {
+        onBuild = false;
     }
 }

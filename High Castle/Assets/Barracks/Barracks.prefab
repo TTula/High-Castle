@@ -876,6 +876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActivated: 0
   activationDistanceTreshold: 20
+  timeToBuild: 10
 --- !u!114 &114969504299787284
 MonoBehaviour:
   m_ObjectHideFlags: 1
