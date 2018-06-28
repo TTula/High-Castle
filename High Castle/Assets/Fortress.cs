@@ -30,28 +30,30 @@ public class Fortress : MonoBehaviour {
         {
             float distanceToGround = cameraControler.DistanceToGround(Input.mousePosition.y);
             Vector3 mouseOnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0f, 0f, distanceToGround));
-            mouseOnPosition = new Vector3(mouseOnPosition.x, terrain.SampleHeight(mouseOnPosition), mouseOnPosition.z);
+            mouseOnPosition = new Vector3(mouseOnPosition.x, 50.1f + terrain.SampleHeight(mouseOnPosition), mouseOnPosition.z);
             bool goodPosition = Mathf.Abs(mouseOnPosition.x - transform.position.x) < 40f && Mathf.Abs(mouseOnPosition.x - transform.position.x) > 20f
                 && Mathf.Abs(mouseOnPosition.z - transform.position.z) < 40f && Mathf.Abs(mouseOnPosition.z - transform.position.z) > 20f;
+            MeshRenderer[] fMeshRenderers = fBuilding.transform.GetComponentsInChildren<MeshRenderer>();
+
             if (goodPosition)
             {
-                foreach(Transform children in fBuilding.transform)
+                foreach (MeshRenderer mRend in fMeshRenderers)
                 {
-                    children.GetComponent<MeshRenderer>().material.color = Color.green;
+                    mRend.material.color = Color.green;
                 }
             } else
             {
-                foreach (Transform children in fBuilding.transform)
+                foreach (MeshRenderer mRend in fMeshRenderers)
                 {
-                    children.GetComponent<MeshRenderer>().material.color = Color.red;
+                    mRend.material.color = Color.red;
                 }
             }
             fBuilding.transform.position = mouseOnPosition;
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                foreach (Transform children in fBuilding.transform)
+                foreach (MeshRenderer mRend in fMeshRenderers)
                 {
-                    children.GetComponent<MeshRenderer>().material.color = Color.white;
+                    mRend.material.color = Color.white;
                 }
                 isForgeBuilded = false;
             }
