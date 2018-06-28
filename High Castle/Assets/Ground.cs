@@ -6,7 +6,7 @@ public class Ground : MonoBehaviour {
 
     public bool collideWithOtherBuilding = false;
 
-    private void OnTriggerEnter()
+    private void OnTriggerStay(Collider other)
     {
         collideWithOtherBuilding = true;
     }
@@ -14,5 +14,11 @@ public class Ground : MonoBehaviour {
     private void OnTriggerExit()
     {
         collideWithOtherBuilding = false;
+    }
+
+    public void OnBuildingStarted()
+    {
+        GetComponent<MeshCollider>().convex = true;
+        GetComponent<MeshCollider>().isTrigger = true;
     }
 }

@@ -113,6 +113,7 @@ public class Fortress : MonoBehaviour {
             cameraControler.isCameraZoomEnabled = true;
             buildMode = false;
             fBuilding.GetComponent<Buildings>().Building();
+            fBuilding.GetComponentInChildren<Ground>().OnBuildingStarted();
         }
     }
 
@@ -124,6 +125,7 @@ public class Fortress : MonoBehaviour {
         Vector3 mouseOnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0f, 0f, distanceToGround));
         mouseOnPosition = new Vector3(mouseOnPosition.x, 50.1f + terrain.SampleHeight(mouseOnPosition), mouseOnPosition.z);
         bool goodPosition = Mathf.Abs(mouseOnPosition.x - transform.position.x) > 25f || Mathf.Abs(mouseOnPosition.z - transform.position.z) > 25f;
+        goodPosition = goodPosition && !bBuilding.GetComponent<Barracks>().IsColliding();
         MeshRenderer[] fMeshRenderers = new MeshRenderer[8];
         int h = 0;
         foreach (Transform children in bBuilding.transform)
@@ -164,6 +166,7 @@ public class Fortress : MonoBehaviour {
             cameraControler.isCameraZoomEnabled = true;
             buildMode = false;
             bBuilding.GetComponent<Buildings>().Building();
+            bBuilding.GetComponentInChildren<Ground>().OnBuildingStarted();
         }
     }
 }
