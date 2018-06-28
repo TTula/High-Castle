@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 33731487628137870}
   - component: {fileID: 23868953710931596}
   - component: {fileID: 64867987917858996}
+  - component: {fileID: 114103679183893768}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -167,7 +168,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817440418025638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 352.41888, y: 60.1, z: 429.86896}
+  m_LocalPosition: {x: 355.53613, y: 60.1, z: 377.73938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4488239099489128}
@@ -505,6 +506,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114103679183893768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461819679815686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7098c3a4f3d0d4194b05ffc2219ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114154667561689038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -519,6 +531,7 @@ MonoBehaviour:
   isForgeControlledByPlayer: 0
   forgeButton: {fileID: 1257119644352268, guid: a5c04b316819a68459235d3f1e52d1ed,
     type: 2}
+  collideWithAnotherBuilding: 0
 --- !u!114 &114292424631708620
 MonoBehaviour:
   m_ObjectHideFlags: 1

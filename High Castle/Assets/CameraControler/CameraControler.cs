@@ -18,6 +18,7 @@ public class CameraControler : MonoBehaviour {
     public float zoomMin;
     public float zoomMax;
     public float posOfCameraUD;
+    public bool isCameraZoomEnabled;
 
     private bool hasCameraChangedRotation = false;
     private Vector3 directionOfCameraScrollingUD;
@@ -26,11 +27,12 @@ public class CameraControler : MonoBehaviour {
     private float firstPositionOfMouseCameraRotation;
     private float firstRotationOfCamera;
     private Terrain terrain;
-
+    
     private Camera cameraInChildren;
 
     private void Start()
     {
+        isCameraZoomEnabled = true;
         ChangeDirectionOfCameraScrolling();
         terrain = FindObjectOfType<Terrain>();
         cameraInChildren = GetComponentInChildren<Camera>();
@@ -58,8 +60,11 @@ public class CameraControler : MonoBehaviour {
             transform.rotation = Quaternion.Euler(45f, firstRotationOfCamera + (Input.mousePosition.x - firstPositionOfMouseCameraRotation) * cameraRotSpeed, 0f);
             ChangeDirectionOfCameraScrolling();
         }
-
-        CameraZoom();
+        if (isCameraZoomEnabled)
+        {
+            CameraZoom();
+        }
+        
     }
 
     private void ChangeDirectionOfCameraScrolling()

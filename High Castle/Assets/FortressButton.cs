@@ -55,6 +55,7 @@ public class FortressButton : MonoBehaviour {
     private void BarracksCreationButtonClicked()
     {
         print("Barracks button pressed!");
+        myFortress.OnBuildingBarracks();
     }
 
 }

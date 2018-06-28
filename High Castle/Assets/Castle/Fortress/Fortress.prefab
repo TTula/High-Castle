@@ -1272,7 +1272,10 @@ MonoBehaviour:
   isFortressControlledByPlayer: 1
   fortressButton: {fileID: 1205802648202204, guid: 1c418148968ba804797b6f61f892c7c5,
     type: 2}
+  buildingRotationSpeed: 0
   forgeBuilding: {fileID: 1817440418025638, guid: 82b9190e5e9e3ee419fb191202418a55,
+    type: 2}
+  barracksBuilding: {fileID: 1804925681668678, guid: a665d538e4c3640458e4d395595f2ab3,
     type: 2}
 --- !u!136 &136018169766182776
 CapsuleCollider:

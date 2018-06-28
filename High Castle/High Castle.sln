@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "High Castle", "High Castle.csproj", "{1E99D632-57F2-898A-912E-C84853D6DEC2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "High Castle.Plugins", "High Castle.Plugins.csproj", "{03C76D7E-F201-7C0B-FCAC-6BA1636E0033}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "High Castle.Editor.Plugins", "High Castle.Editor.Plugins.csproj", "{66FE6857-574D-DF9A-0E84-BB1A275F7A4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "High Castle.Editor", "High Castle.Editor.csproj", "{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "High Castle.Editor", "High Castle.Editor.csproj", "{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}"
 EndProject
@@ -33,11 +33,12 @@ Global
 		{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42F509BD-33E4-D0E6-CF1E-D5BF2964B66E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9AF2147D-DDCE-4AA2-8295-EF0CB994554D}
 	EndGlobalSection
 EndGlobal
