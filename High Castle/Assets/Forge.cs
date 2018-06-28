@@ -8,20 +8,20 @@ public class Forge : MonoBehaviour {
     public GameObject forgeButton;
 
     private GameObject fButton;
-    public bool collideWithAnotherBuilding;
+    private Ground ground;
 
     private void Start()
     {
-        collideWithAnotherBuilding = false;
+        ground = GetComponentInChildren<Ground>();
         isForgeControlledByPlayer = true;
         fButton = Instantiate(forgeButton);
         fButton.GetComponent<ForgeButton>().AssignForge(transform);
         fButton.transform.parent = FindObjectOfType<Canvas>().transform;
     }
 
-    private void Update()
+    public bool IsColliding()
     {
-        
+        return ground.collideWithOtherBuilding;
     }
 
     private void OnDestroy()

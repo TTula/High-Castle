@@ -463,10 +463,10 @@ MeshCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1461819679815686}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -517,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7098c3a4f3d0d4194b05ffc2219ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collideWithOtherBuilding: 0
 --- !u!114 &114154667561689038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -531,7 +532,6 @@ MonoBehaviour:
   isForgeControlledByPlayer: 0
   forgeButton: {fileID: 1257119644352268, guid: a5c04b316819a68459235d3f1e52d1ed,
     type: 2}
-  collideWithAnotherBuilding: 0
 --- !u!114 &114292424631708620
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -68,6 +68,7 @@ public class Fortress : MonoBehaviour {
         Vector3 mouseOnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0f, 0f, distanceToGround));
         mouseOnPosition = new Vector3(mouseOnPosition.x, 50.1f + terrain.SampleHeight(mouseOnPosition), mouseOnPosition.z);
         bool goodPosition = Mathf.Abs(mouseOnPosition.x - transform.position.x) > 20f || Mathf.Abs(mouseOnPosition.z - transform.position.z) > 20f;
+        goodPosition = goodPosition && !fBuilding.GetComponent<Forge>().IsColliding();
         MeshRenderer[] fMeshRenderers = new MeshRenderer[4];
         int h = 0;
         foreach (Transform children in fBuilding.transform)
